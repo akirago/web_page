@@ -1,0 +1,27 @@
+body {
+    background-color: aqua
+}
+
+h1 {
+    font-size: 32px;
+    color:crimson;
+    text-align: center
+}
+
+h3 {
+    border-style: groove;
+    border-width: 12px;
+}
+
+#profile {
+    background-color: aquamarine
+}
+
+.pagetop {
+    text-align: right
+}
+
+.copyright {
+    border-top: solid 3px #000;
+    text-align: center
+}
