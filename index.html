@@ -1,130 +1,186 @@
-
-                         <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>橋本 晶に案件を任せる100の理由</title>
-        <meta name="description" content="橋本 晶は目白に住むAndroid Engineerです。永遠無敗の最強エンジニア。秒で案件をこなすコスパエンジニアなので必見">
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/test.js"></script>
-    </head>
-    <body>
 
-<!--
+<head>
+    <meta charset="utf-8">
+    <title>橋本 晶に案件を任せる100の理由</title>
+    <meta name="description" content="橋本 晶は目白に住むAndroid Engineerです。永遠無敗の最強エンジニア。秒で案件をこなすコスパエンジニアなので必見">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/test.js"></script>
+</head>
+
+<body>
+
+    <p id="id_1">1. JS側にonclick書いてクリックイベント発火。</p>
+    <p id="id_2">2. JSでは無名関数も使えるよ！</p>
+    <p onclick="pClick()">3. HTMLでonclick属性書いた。クリックしてみて！</p>
+    <p id="id_3" class="foo-before">4. クリックするたび色変わるよ！（クラスの入れ替えをjQueryで実装）</p>
+    <p id="id_4">5. クリックするとCSS追加されるよ！</p>
+
+    <script type="text/javascript">
+        // 変数定義（「//」から始まる行はコメントアウト）
+        var id_1 = document.getElementById("id_1");
+        var id_2 = document.getElementById("id_2");
+        var id_3 = document.getElementById("id_3");
+
+        // id_1（id_2）をクリックしたら、functionの中身を実行
+        id_1.onclick = function id1Click() {
+            alert("id_1クリックしたよ！");
+        }
+        id_2.onclick = function() {
+            alert("id_2クリック！関数名は書いても書かなくてもOK！");
+        }
+
+        // HTML側にクリックイベント記述
+        function pClick() {
+            alert("pタグクリック！HTMLでonclick属性書いたよ！");
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        var stylesheet = document.styleSheets.item(0);
+
+        // 上で定義したid_4はここでも使えるよ！
+        id_4.onclick = function() {
+            //第2引数は、「CSSの何番目のルールにするか」。0始まりの番号。
+            stylesheet.insertRule("#id_4 {font-size: 20px;}", 0);
+            stylesheet.insertRule("#id_4 {background-color: pink;}", stylesheet.cssRules.length);
+        }
+
+    </script>
+
+    <!-- これでjQuery使える。ただしネットつながってれば。 -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        // $関数はjQueryの定番！
+        $('#id_3').click(function() {
+            this.className = (this.className === 'foo-before') ? 'foo-after' : 'foo-before';
+        });
+
+        document.writeln("<p>6. JSでHTML記述！（リロードするたび少し表示が遅れてるけど、わかるかな？）</p>");
+        document.writeln("<p>7. URLは、" + document.URL + "だよ！</p>");
+        document.writeln("<p>8. このページのtitleは、「" + document.title + "」だよ！</p>");
+
+    </script>
+
+    <!--
         <script type="text/javascript">
             alert("hello world")
         </script>
 -->
-        <header>
-            <h1>橋本 晶について</h1>
-        </header>
+    <header>
+        <h1>橋本 晶について</h1>
+    </header>
 
-        <img src="img/akira.png" alt="橋本晶のプロフィール" width="236" height="233">
+    <img src="img/akira.png" alt="橋本晶のプロフィール" width="236" height="233">
 
-        <table>
-            <tr>
-                <th>年齢</th>
-                <td>27</td>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <td>男</td>
-            </tr>
-            <tr>
-                <th>稼働時間</th>
-                <td>20 h/week</td>
-            </tr>
-        </table>
+    <table>
+        <tr>
+            <th>年齢</th>
+            <td>27</td>
+        </tr>
+        <tr>
+            <th>性別</th>
+            <td>男</td>
+        </tr>
+        <tr>
+            <th>稼働時間</th>
+            <td>20 h/week</td>
+        </tr>
+    </table>
 
-        <a href="https://crowdworks.jp/public/employees/2936879" target="_blank">crowd worksのプロフィールを見る</a><br>
-        <a href="https://goo.gl/maps/27wTE21HxqXy7p139" target="_blank">橋本晶のオフィス</a>
+    <a href="https://crowdworks.jp/public/employees/2936879" target="_blank">crowd worksのプロフィールを見る</a><br>
+    <a href="https://goo.gl/maps/27wTE21HxqXy7p139" target="_blank">橋本晶のオフィス</a>
 
-        <nav>
-            <ul>
-                <li><a href="#profile">自己PR</a></li>
-                <li><a href="#career">経歴</a></li>
-                <li><a href="#certificate">資格</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="#profile">自己PR</a></li>
+            <li><a href="#career">経歴</a></li>
+            <li><a href="#certificate">資格</a></li>
+        </ul>
+    </nav>
 
-        <section id="profile">
-            <h2>自己PR</h2>
-            <p>
-                プロフィールをご覧いただき、ありがとうございます。<br>
-                橋本 晶と申します<br><br>
-                以下に経歴や可能な業務などを記載しておりますのでご覧下さい<br>
-            </p>
-        </section>
+    <section id="profile">
+        <h2>自己PR</h2>
+        <p>
+            プロフィールをご覧いただき、ありがとうございます。<br>
+            橋本 晶と申します<br><br>
+            以下に経歴や可能な業務などを記載しておりますのでご覧下さい<br>
+        </p>
+    </section>
 
-        <section id="career">
-            <h3>経歴</h3>
-            <ul>
-                <li>2016年東京大学工学部化学システム科 卒業</li>
-                <li>2016年Android Engineerとして動画配信サービスの会社のR&amp;D部で働き始める</li>
-            </ul>
-        </section>
+    <section id="career">
+        <h3>経歴</h3>
+        <ul>
+            <li>2016年東京大学工学部化学システム科 卒業</li>
+            <li>2016年Android Engineerとして動画配信サービスの会社のR&amp;D部で働き始める</li>
+        </ul>
+    </section>
 
-        <section id="certificate">        
-            <h3>資格</h3>
-            <ul>
-                <li>応用情報処理</li>
-                <li>統計検定 ２級</li>
-                <li>.comMaster★★</li>
-            </ul>
-        </section>
+    <section id="certificate">
+        <h3>資格</h3>
+        <ul>
+            <li>応用情報処理</li>
+            <li>統計検定 ２級</li>
+            <li>.comMaster★★</li>
+        </ul>
+    </section>
 
-        <section>        
-            <h3>過去の実績</h3>
-            <ul>
-                <li>Mobileの動画配信アプリ</li>
-                <li>STBの動画配信アプリ</li>
-                <li>MBaaSアプリ(Firebase, GCP)</li>
-                <li>画像処理を用いたアプリ(OpenCV)</li>
-                <li>完全サーバレスアプリ</li>
-            </ul>
-        </section>
+    <section>
+        <h3>過去の実績</h3>
+        <ul>
+            <li>Mobileの動画配信アプリ</li>
+            <li>STBの動画配信アプリ</li>
+            <li>MBaaSアプリ(Firebase, GCP)</li>
+            <li>画像処理を用いたアプリ(OpenCV)</li>
+            <li>完全サーバレスアプリ</li>
+        </ul>
+    </section>
 
-        <section>
-            <h3>現在の業務内容</h3>
-            <ul>
-                <li>Androidのアプリ開発</li>
-                <li>Chromecast, TV系</li>
-            </ul>
-        </section>
+    <section>
+        <h3>現在の業務内容</h3>
+        <ul>
+            <li>Androidのアプリ開発</li>
+            <li>Chromecast, TV系</li>
+        </ul>
+    </section>
 
-        <section>
-            <h3>可能な業務</h3>
-            上記の業務内容の他、
-            <ul>
-                <li>プログラムの作成</li>
-                <li>webデザイン</li>
-                <li>ツール開発・修正</li>
-                <li>UI/UX設計</li>
-            </ul>
-            などをお引き受け可能です。
-        </section>
+    <section>
+        <h3>可能な業務</h3>
+        上記の業務内容の他、
+        <ul>
+            <li>プログラムの作成</li>
+            <li>webデザイン</li>
+            <li>ツール開発・修正</li>
+            <li>UI/UX設計</li>
+        </ul>
+        などをお引き受け可能です。
+    </section>
 
-        <section>
-            <h3>開発言語</h3>
-            <ol>
-                <li>Kotlin</li>
+    <section>
+        <h3>開発言語</h3>
+        <ol>
+            <li>Kotlin</li>
 
-                <li>Java</li>
-                <li>JavaScript</li>
-                <li>Html, CSS</li>
-                <li>Python</li>
-            </ol>
-        </section>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Html, CSS</li>
+            <li>Python</li>
+        </ol>
+    </section>
 
-        <section>
-            <h3>稼働時間</h3>
-            平日は３〜４時間、休日は８時間在宅ワークをお受けしております。<br>
-        </section>
+    <section>
+        <h3>稼働時間</h3>
+        平日は３〜４時間、休日は８時間在宅ワークをお受けしております。<br>
+    </section>
 
 
-        <footer>
-            <p class="pagetop"><a href="#top">ページのトップへ</a></p>
-            <p class="copyright"><small>&copy; Copyright 2019 homelab</small></p>
-        </footer>
-    </body>
+    <footer>
+        <p class="pagetop"><a href="#top">ページのトップへ</a></p>
+        <p class="copyright"><small>&copy; Copyright 2019 homelab</small></p>
+    </footer>
+</body>
+
 </html>
