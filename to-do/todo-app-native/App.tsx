@@ -6,11 +6,13 @@ import {
   View,
 } from 'react-native'
 import TaskList from './src/TaskList';
+import CustomButton from './src/CustomButton';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <TaskList />
+      <CustomButton />
     </View>
   );
 }
