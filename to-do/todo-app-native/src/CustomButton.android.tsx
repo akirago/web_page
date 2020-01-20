@@ -12,7 +12,8 @@ import {
     return(
         <Button
           title="Press me"
-          onPress={() => Alert.alert('Simple Button pressed')}
+          onPress={() => Alert.alert('Androidやで')}
+          color={'#ffaa99'}
         />
     );
 };

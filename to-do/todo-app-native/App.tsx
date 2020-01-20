@@ -6,14 +6,20 @@ import {
   View,
 } from 'react-native'
 import TaskList from './src/TaskList';
-import CustomButton from './src/CustomButton';
+import TaskDetail from './src/TaskDetail';
+import { NavigationNativeContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <TaskList />
-      <CustomButton />
-    </View>
+  
+    <NavigationNativeContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={TaskList} />
+      </Stack.Navigator>
+    </NavigationNativeContainer>
   );
 }
 
