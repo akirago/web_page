@@ -12,12 +12,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
+// https://reactnavigation.org/docs/en/next/hello-react-navigation.html
+
 export default function App() {
   return (
   
     <NavigationNativeContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={TaskList} />
+        <Stack.Screen name="タスク一覧" component={TaskList} />
+        <Stack.Screen name="タスク詳細" component={TaskDetail} />
       </Stack.Navigator>
     </NavigationNativeContainer>
   );
