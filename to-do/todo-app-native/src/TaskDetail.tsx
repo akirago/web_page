@@ -10,7 +10,6 @@ import {
 
 const TaskDetail = () => {
     return(
-
         <Button
           title="Press me"
           onPress={() => Alert.alert('Androidやで')}

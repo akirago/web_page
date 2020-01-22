@@ -13,7 +13,7 @@ import {
         <Button
           title="Press me"
           onPress={() => Alert.alert('Androidやで')}
-          color={'#ffaa99'}
+          color={'#0000FF'}
         />
     );
 };

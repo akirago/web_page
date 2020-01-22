@@ -13,7 +13,7 @@ import {
         <Button
           title="Press me"
           onPress={() => console.log("press me")}
-          color={'#ffaa99'}
+          color={'#00FF00'}
         />
     );
 };
