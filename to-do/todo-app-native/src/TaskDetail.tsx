@@ -7,14 +7,13 @@ import {
   Text,
   View,
 } from 'react-native'
+import CustomButton from './CustomButton';
 
 const TaskDetail = () => {
     return(
-        <Button
-          title="Press me"
-          onPress={() => Alert.alert('Androidやで')}
-          color={'#ffaa99'}
-        />
+      <View>
+        <Text>タスク詳細画面</Text>
+      </View>
     );
 };
 
