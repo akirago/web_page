@@ -12,7 +12,8 @@ import CustomButton from './CustomButton';
 const TaskDetail = (props) => {
     return(
       <View>
-        <Text>{props.route.params.id}</Text>
+        <Text>{props.route.params.task.id}</Text>
+        <Text>{props.route.params.task.title}</Text>
       </View>
     );
 };

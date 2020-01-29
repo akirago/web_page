@@ -34,9 +34,9 @@ const tasks:Task[] = [
 ];
 
 const TaskList = (props) => {
-  const moveToTaskDetailFunc = (taskId: number) => {
+  const moveToTaskDetailFunc = (task: Task) => {
     props.navigation.navigate('タスク詳細', {
-      id: taskId,
+      task,
     })
   };
 

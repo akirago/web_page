@@ -14,7 +14,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface Props {
     task: Task
-    moveToDetail: (taskId: number) => void
+    moveToDetail: (task: Task) => void
 }
 
 const styles = StyleSheet.create({
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 const TaskListItem: React.FC<Props> = (props: Props) => {
     return (
         <TouchableOpacity
-        onPress= {() => props.moveToDetail(props.task.id)}>
+        onPress= {() => props.moveToDetail(props.task)}>
         <View style={styles.container}>
             <Text>{props.task.title}</Text>
             <Text>{props.task.completed ? "完了" : '未完了'}</Text>
