@@ -1,5 +1,5 @@
 export default interface Task {
-    id: String
+    id: number
     title: string
     note?: string
     estimateEndDateTime?: Date

@@ -15,41 +15,39 @@ import TaskListItem from './TaskListItem';
 
 const tasks:Task[] = [
   {
-    id: "1",
+    id: 1,
     title: '牛乳を買う',
     completed: false
   },
 
   {
-    id: "2",
+    id: 2,
     title: '牛乳をもう一つ買う',
     completed: false
   },
 
   {
-    id: "3",
+    id: 3,
     title: '牛乳をさらにもう一つ　買う',
     completed: false
   }
 ];
 
 const TaskList = (props) => {
+  const moveToTaskDetailFunc = (taskId: number) => {
+    props.navigation.navigate('タスク詳細', {
+      id: taskId,
+    })
+  };
+
     return(
         <View>
-
-            <Text>タスク一覧画面</Text>
-      <FlatList
-        data={tasks}
-        renderItem={({ item }) => <TaskListItem task={item} />}
-        keyExtractor={item => item.id.toString()}
-      />
-    {tasks.map(task => 
-          <TaskListItem task ={task}/>)}
-        <Button
-          title="Press me"
-          onPress={() => props.navigation.navigate('タスク詳細')}
-          color={'#ffaa99'}
-        />
+          <Text>タスク一覧画面</Text>
+          <FlatList
+            data={tasks}
+            renderItem={({ item }) => <TaskListItem task={item} moveToDetail={moveToTaskDetailFunc}/>}
+            keyExtractor={item => item.id.toString()}
+          />
         </View>
     );
 };

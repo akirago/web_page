@@ -9,10 +9,10 @@ import {
 } from 'react-native'
 import CustomButton from './CustomButton';
 
-const TaskDetail = () => {
+const TaskDetail = (props) => {
     return(
       <View>
-        <Text>タスク詳細画面</Text>
+        <Text>{props.route.params.id}</Text>
       </View>
     );
 };
