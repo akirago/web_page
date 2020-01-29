@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import Task from './model/TaskModel';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import TaskAddButton from './TaskAddButton';
 // functional conponent 
 // https://facebook.github.io/react-native/docs/button
 

@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import Task from './model/TaskModel';
 import TaskListItem from './TaskListItem';
+import TaskAddButton from './TaskAddButton';
 // functional conponent 
 // https://facebook.github.io/react-native/docs/button
 
@@ -33,6 +34,13 @@ const tasks:Task[] = [
   }
 ];
 
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+  }
+});
+
 const TaskList = (props) => {
   const moveToTaskDetailFunc = (task: Task) => {
     props.navigation.navigate('タスク詳細', {
@@ -41,13 +49,14 @@ const TaskList = (props) => {
   };
 
     return(
-        <View>
+        <View style={styles.container}>
           <Text>タスク一覧画面</Text>
           <FlatList
             data={tasks}
             renderItem={({ item }) => <TaskListItem task={item} moveToDetail={moveToTaskDetailFunc}/>}
             keyExtractor={item => item.id.toString()}
           />
+          <TaskAddButton/>
         </View>
     );
 };
