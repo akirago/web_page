@@ -9,10 +9,11 @@ const TaskCreate = (props) => {
    const { register, setValue, handleSubmit, errors } = useForm();
     const onSubmit = () => {
           props.route.params.createTask({
-                                        id: 999,
+                                        id: 999999,
                                          title: title,
                                          completed: false
                                         });
+        props.navigation.navigate('タスク一覧');
     };
 
     return (
@@ -20,7 +21,7 @@ const TaskCreate = (props) => {
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
               value={title}
-              ref={e => register({name: 'title'}, {required: true})}
+              ref={register({name: 'title'}, {required: true}) as any}
               onChange={(event) => {
               console.log(event.nativeEvent.text)
                   setTitle(event.nativeEvent.text);
