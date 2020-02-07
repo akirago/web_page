@@ -19,9 +19,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const TaskAddButton = () => {
+interface Props {
+  moveToAdd: () => void
+}
+
+const TaskAddButton = (props) => {
     return(
-      <TouchableOpacity onPress={() => {}} style={styles.container}>
+      <TouchableOpacity onPress={() => {props.moveToAdd()}} style={styles.container}>
         <Ionicons name="ios-add-circle" size={80} color="green" />
       </TouchableOpacity>
     );

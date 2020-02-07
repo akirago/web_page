@@ -7,6 +7,7 @@ import {
   Alert,
   Text,
   View,
+  Image,
 } from 'react-native'
 import Task from './model/TaskModel';
 import TaskListItem from './TaskListItem';
@@ -48,6 +49,13 @@ const TaskList = (props) => {
     })
   };
 
+
+const moveToTaskCreateFunc = () => {
+  props.navigation.navigate('タスク作成', {createTask: (task: Task) => {
+    console.log(task);
+  }});
+}
+
     return(
         <View style={styles.container}>
           <FlatList
@@ -55,7 +63,7 @@ const TaskList = (props) => {
             renderItem={({ item }) => <TaskListItem task={item} moveToDetail={moveToTaskDetailFunc}/>}
             keyExtractor={item => item.id.toString()}
           />
-          <TaskAddButton/>
+          <TaskAddButton moveToAdd={moveToTaskCreateFunc}/>
         </View>
     );
 };

@@ -20,7 +20,7 @@ const TaskCreate = (props) => {
             <TextInput
               style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
               value={title}
-              ref={register({name: 'title'}, {required: true})}
+              ref={e => register({name: 'title'}, {required: true})}
               onChange={(event) => {
               console.log(event.nativeEvent.text)
                   setTitle(event.nativeEvent.text);
