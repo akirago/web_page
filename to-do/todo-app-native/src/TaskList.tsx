@@ -50,7 +50,6 @@ const TaskList = (props) => {
 
     return(
         <View style={styles.container}>
-          <Text>タスク一覧画面</Text>
           <FlatList
             data={tasks}
             renderItem={({ item }) => <TaskListItem task={item} moveToDetail={moveToTaskDetailFunc}/>}

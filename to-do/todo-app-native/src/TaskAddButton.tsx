@@ -7,7 +7,6 @@ import {
   Text,
   View,
 } from 'react-native'
-import CustomButton from './CustomButton';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -15,9 +14,9 @@ import { Ionicons } from '@expo/vector-icons';
 const styles = StyleSheet.create({
   container: {
     // position: 'absolute',
-    // right:10,
-    // bottom:10
-  }
+    // right: 10,
+    // bottom: 10
+  },
 });
 
 const TaskAddButton = () => {
