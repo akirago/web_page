@@ -14,6 +14,7 @@ import Task from './model/TaskModel';
 import TaskListItem from './TaskListItem';
 import TaskAddButton from './TaskAddButton';
 import {SwipeListView} from 'react-native-swipe-list-view'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 // functional conponent 
 // https://facebook.github.io/react-native/docs/button
 
@@ -69,14 +70,25 @@ const moveToTaskCreateFunc = () => {
   }});
 }
 
+const handleDeleteTask = (target: Task) => {
+  const list = data.map(task => {
+    if (task.id !== target.id) return task;
+    task.title = '削除済み';
+    return task;
+  });
+  setData(list)
+}
+
     return(
         <View style={styles.container}>
           <SwipeListView
             data={data}
             renderItem={({ item }, rowMap) => <TaskListItem task={item} moveToDetail={moveToTaskDetailFunc}/>}
-            renderHiddenItem={ (data, rowMap) => (
+              renderHiddenItem={ ( {item}, rowMap) => (
               <View style={styles.rowBack}>
-                  <Text>Left</Text>
+                  <TouchableOpacity onPress={() => handleDeleteTask(item)} >
+                    <Text>削除</Text>
+                  </TouchableOpacity>
                   <Text>Right</Text>
               </View>
        )}
